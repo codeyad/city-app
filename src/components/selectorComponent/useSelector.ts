@@ -22,7 +22,6 @@ function UseSelector({
   const [isDirty, setIsDirty] = useState<boolean>(false)
 
   useEffect(() => {
-    console.log(initialSelectedItems)
     if (initialSelectedItems) setSelecteditems(initialSelectedItems)
   }, [])
 

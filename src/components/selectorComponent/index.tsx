@@ -64,11 +64,17 @@ const SelectorComponent = ({
           type='search'
           onChange={handleInputChange}
           ref={inputRef}
+          data-testid='selector'
         />
       </div>
       {errorMessage && <span className='input-error'>{errorMessage}</span>}
       {isLoading ? (
-        <img className='loading' src={loading} alt='My Happy SVG' />
+        <img
+          data-testid='loader'
+          className='loading'
+          src={loading}
+          alt='My Happy SVG'
+        />
       ) : null}
       <ul className='menu'>
         {isOpen

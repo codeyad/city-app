@@ -16,7 +16,6 @@ function HomeComponentPage() {
   return (
     <FormComponent
       onSubmit={(data: FormValues) => {
-        console.log(data)
         navigate('result', { state: data })
       }}
     />

@@ -3,6 +3,8 @@ import {
   findByText,
   render,
   screen,
+  waitFor,
+  waitForElementToBeRemoved,
 } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from './App'
@@ -40,18 +42,27 @@ describe('App distance calculator', () => {
     expect(button).toBeDisabled()
   })
 
-  //   it('Button enabled when fields are populated', async () => {
-  //     render(
-  //       <BrowserRouter>
-  //         <App />
-  //       </BrowserRouter>
-  //     )
-  //     screen.debug()
-  //     const inputs = await screen.findAllByRole('textbox')
+  it('Button enabled when fields are populated', async () => {
+    render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    )
 
-  //     userEvent.type(inputs[0], 'paris')
-  //     const paris = await screen.findByText('Paris')
-  //     userEvent.click(paris)
-  //     // screen.debug()
-  //   })
+    const inputs = await screen.findAllByTestId('selector')
+    await userEvent.type(inputs[0], 'paris')
+    const paris = await screen.findByText('Paris')
+    await userEvent.click(paris)
+
+    await userEvent.type(inputs[1], 'marseille')
+    const marseille = await screen.findByText('Marseille')
+    await userEvent.click(marseille)
+
+    await userEvent.type(inputs[2], 'lyon')
+    const lyon = await screen.findByText('Lyon')
+    await userEvent.click(lyon)
+
+    const button = await screen.findByText('Submit')
+    expect(button).toBeEnabled()
+  })
 })
