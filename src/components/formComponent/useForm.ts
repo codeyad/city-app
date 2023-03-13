@@ -33,7 +33,7 @@ function UseForm({
     d2: 0,
   })
 
-  const [distanceIsLoading, setdistanceIsLoading] = useState(true)
+  const [distanceIsLoading, setdistanceIsLoading] = useState(false)
 
   useEffect(() => {
     let values

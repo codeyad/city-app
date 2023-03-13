@@ -37,16 +37,14 @@ function FormComponent({ useDeepLink, onSubmit, initFormValues }: FormProps) {
   const distance1 = () =>
     distance.d1 ? (
       <p className='distance'>
-        Distance between origin city and intemediate cities is
-        {distance.d1}KM
+        Distance between origin city and intemediate cities is {distance.d1}KM
       </p>
     ) : null
 
   const distance2 = () =>
     distance.d1 ? (
       <p className='distance'>
-        Distance between intemediate cities and destiny city is
-        {distance.d2}KM
+        Distance between intemediate cities and destiny city is {distance.d2}KM
       </p>
     ) : null
 

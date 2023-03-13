@@ -43,7 +43,7 @@
       "<rootDir>/jest-setup.ts"
     ],
     "moduleNameMapper": {
-      "\\.(css|less|svg)$": "identity-obj-proxy",
+      "\\.(css|less)$": "identity-obj-proxy",
       "^@App/(.*)$": "<rootDir>/src/$1",
       "^lib/(.*)$": "<rootDir>/common/$1"
     },
@@ -53,10 +53,6 @@
     ],
     "transform": {
       "^.+\\.(ts|tsx)?$": "ts-jest"
-    },
-    "moduleDirectories": [
-      "<rootDir>",
-      "node_modules"
-    ]
+    }
   }
 }
